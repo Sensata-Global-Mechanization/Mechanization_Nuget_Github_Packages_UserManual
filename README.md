@@ -2,6 +2,8 @@
 
 #### In this manual, we will use a `nuget.config` file to store configuration values for packaging and publishing .NET Core or .NET Standard NuGet packages to your organization's GitHub Packages. Additionally, the NuGet Package Manager will be used to install the packages in a new project.
 
+Resource -  [Quickstart: Create and publish a package using Visual Studio (.NET Framework, Windows) | Microsoft Learn](https://learn.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-visual-studio?tabs=netcore-cli)
+
 ### Prerequisites
 1. Visual Studio 2022 with .NET Core or .NET Standard support.
 2. A GitHub account with access to your organization's repositories.
@@ -159,7 +161,7 @@ xml
 
 # Dot Net Framework Projects Instructions - Package and Publish NuGet Packages for .NET Framework Projects
 
-### Below is step-by-step instructions for creating, packaging, and publishing NuGet packages for .NET Framework projects using the Package Manager Console in Visual Studio.
+#### Below is step-by-step instructions for creating, packaging, and publishing NuGet packages for .NET Framework projects using the Package Manager Console in Visual Studio.
 
 Resource -  [Quickstart: Create and publish a package using Visual Studio (.NET Framework, Windows) | Microsoft Learn](https://learn.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-visual-studio-net-framework)
 
