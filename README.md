@@ -16,7 +16,7 @@
 5. Give your token a descriptive name.
 6. Select the read:packages and write:packages scopes for this token to authorize for your specific tasks.
 * a member of a GitHub organization can use a personal access token with the `read:packages` and `write:packages` scopes to publish packages to GitHub Packages within the organization. 
-7. Set the expiration date for your token to a later date `SEPCIFIC PERIOD` rather than `NEVER` if you don’t want it to expire to soon enough.
+7. Set the expiration date for your token to a `SEPCIFIC DATE` rather than `never` if you don’t want it to expire to soon enough.
 * setting the expiration date to `never` ensures that the token does not expire, it is generally recommended to set an expiration date for `security reasons`
 8. Click on Generate token.
 
