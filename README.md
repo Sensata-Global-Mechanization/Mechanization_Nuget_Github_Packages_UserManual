@@ -1,4 +1,4 @@
-# Create and Package nuget package for Dot Net Core or DotNet Standard projects
+# Create and Package NuGet package for Dot Net Core or DotNet Standard projects
 
 #### In this manual, we will use a `nuget.config` file to store configuration values for packaging and publishing .NET Core or .NET Standard NuGet packages to your organization's GitHub Packages. Additionally, the NuGet Package Manager will be used to install the packages in a new project.
 
@@ -6,7 +6,21 @@
 1. Visual Studio 2022 with .NET Core or .NET Standard support.
 2. A GitHub account with access to your organization's repositories.
 3. A Personal Access Token (PAT) at organization level with `read:packages` and `write:packages` scopes.
-Create a nuget.config file for your project
+
+###  Create a Personal Access Token at the organization level with read:packages and write:packages scopes for Github
+
+1. Go to your GitHub account settings.
+2. Select Developer settings.
+3. Select Personal access tokens.
+4. Click on Generate new token.
+5. Give your token a descriptive name.
+6. Select the read:packages and write:packages scopes for this token to authorize for your specific tasks.
+* a member of a GitHub organization can use a personal access token with the `read:packages` and `write:packages` scopes to publish packages to GitHub Packages within the organization. 
+7. Set the expiration date for your token to a later date `SEPCIFIC PERIOD` rather than `NEVER` if you don’t want it to expire to soon enough.
+* setting the expiration date to `never` ensures that the token does not expire, it is generally recommended to set an expiration date for `security reasons`
+8. Click on Generate token.
+
+### Create a nuget.config file for your project
 1.	Open your project or solution in Visual Studio.
 2.	Select `Tools` > `NuGet Package Manager` > `Package Manager Console` to open the Package Manager Console window.
 3.	In the console, use the `pwd` command to print the current working directory. For example:
@@ -145,7 +159,7 @@ xml
 
 # Dot Net Framework Projects Instructions - Package and Publish NuGet Packages for .NET Framework Projects
 
-### This manual provides step-by-step instructions for creating, packaging, and publishing NuGet packages for .NET Framework projects using the Package Manager Console in Visual Studio.
+### Below is step-by-step instructions for creating, packaging, and publishing NuGet packages for .NET Framework projects using the Package Manager Console in Visual Studio.
 
 Resource -  [Quickstart: Create and publish a package using Visual Studio (.NET Framework, Windows) | Microsoft Learn](https://learn.microsoft.com/en-us/nuget/quickstart/create-and-publish-a-package-using-visual-studio-net-framework)
 
