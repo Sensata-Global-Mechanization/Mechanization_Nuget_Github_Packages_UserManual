@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>SensataUILib</id>
+    <version>1.0.0</version>
+    <title>SensataUILib</title>
+    <authors>jmarioiii</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <!-- <icon>icon.png</icon> -->
+    <projectUrl>https://github.com/Sensata-Global-Mechanization/Sand-Box-.NET-Modular-UI-Library</projectUrl>
+    <description>Repository for the modular .NET UI library</description>
+    <releaseNotes>First NuGet Package for SensataUILibrary</releaseNotes>
+    <copyright>Copyright 2023</copyright>
+    <tags>SensataModularUILibrary MechanizationUILibrary</tags>
+  </metadata>
+</package>
