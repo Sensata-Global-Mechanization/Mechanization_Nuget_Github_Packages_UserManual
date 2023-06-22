@@ -319,7 +319,7 @@ jobs:
         dotnet nuget add source https://nuget.pkg.github.com/Sensata-Global-Mechanization/index.json --name github --username ${{ secrets.SECRET_NAME }} --password ${{ secrets.GH_PACKAGES_TOKEN }} --store-password-in-clear-text
       shell: pwsh
       
-    # This step restores any dependencies and installs the M2MqttDotnetCore package
+    # This step restores any dependencies and installs the M2MqttDotnetCore package; to add any specific package version we need to mention in the run section below with the package name and version information otherwise it will pull the latest available version.
     - name: Restore and install dependencies
       run: |
         dotnet restore
