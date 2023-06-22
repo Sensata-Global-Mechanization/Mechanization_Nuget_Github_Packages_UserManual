@@ -270,15 +270,15 @@ dotnet nuget push SensataUILib.1.0.0.nupkg -k YOUR_PERSONAL_ACCESS_TOKEN -s http
 2. **Setup Folder Structure**: Create a `.github/workflows/` folder structure in the root level of the git repository.
 
 3. **Research**: Try reading up on GitHub packages and automated publishing. Here are some useful links:
-  * [GitHub Actions documentation - GitHub Docs](https://docs.github.com/en/actions)
-  * [Learn GitHub Actions - GitHub Docs](https://docs.github.com/en/actions/learn-github-actions)
-  * [Github Actions tutorial by padok-team](https://github.com/padok-team/github-actions-tutorial)
-  * [GitHub Actions Tutorial: A Complete Guide with Examples - Everhour Blog](https://everhour.com/blog/github-actions-tutorial/)
-  * [GitHub Actions Tutorial and Examples - Codefresh](https://codefresh.io/learn/github-actions/github-actions-tutorial-and-examples/)
-  * [Workflow syntax for GitHub Actions - GitHub Docs](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
-  * [Quickstart for GitHub Actions - GitHub Docs](https://docs.github.com/en/actions/quickstart)
-  * [GitHub Actions 101: Creating Your First Workflow - Articles by Victoria Lo](https://lo-victoria.com/github-actions-101-creating-your-first-workflow)
-  * [About workflows - GitHub Docs](https://docs.github.com/en/actions/using-workflows/about-workflows)
+    * [GitHub Actions documentation - GitHub Docs](https://docs.github.com/en/actions)
+    * [Learn GitHub Actions - GitHub Docs](https://docs.github.com/en/actions/learn-github-actions)
+    * [Github Actions tutorial by padok-team](https://github.com/padok-team/github-actions-tutorial)
+    * [GitHub Actions Tutorial: A Complete Guide with Examples - Everhour Blog](https://everhour.com/blog/github-actions-tutorial/)
+    * [GitHub Actions Tutorial and Examples - Codefresh](https://codefresh.io/learn/github-actions/github-actions-tutorial-and-examples/)
+    * [Workflow syntax for GitHub Actions - GitHub Docs](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
+    * [Quickstart for GitHub Actions - GitHub Docs](https://docs.github.com/en/actions/quickstart)
+    * [GitHub Actions 101: Creating Your First Workflow - Articles by Victoria Lo](https://lo-victoria.com/github-actions-101-creating-your-first-workflow)
+    * [About workflows - GitHub Docs](https://docs.github.com/en/actions/using-workflows/about-workflows)
 
 4. **Create a Workflow File**: In the `workflows` folder, create a file with the `.yml` extension. This file will define your GitHub Actions workflow.
 
@@ -370,9 +370,9 @@ jobs:
 
 ```
 
-* The above example script will setup the dot net environment for build, package and publish of the nuget package to github packages on every time a branch is merged into main.
+  * The above example script will setup the dot net environment for build, package and publish of the nuget package to github packages on every time a branch is merged into main.
 
-* Source - [Sensata Global Mechanization Nuget Package Source URL](https://nuget.pkg.github.com/Sensata-Global-Mechanization/index.json) is the source for Sensata Global Mechanization packages.
+  * Source - [Sensata Global Mechanization Nuget Package Source URL](https://nuget.pkg.github.com/Sensata-Global-Mechanization/index.json) is the source for Sensata Global Mechanization packages.
 
 6. **Securing Information**: `secrets.SECRET_NAME` and `secrets.GH_PACKAGES_TOKEN` are used to prevent hardcoding of the username and password in the script, respectively. These secrets are stored in the repository settings, and currently, every library repository is setup with secrets corresponding to Satya or myself. We've created a PAT token with necessary permissions like read:write repositories, read:write packages.
 
