@@ -261,19 +261,28 @@ dotnet nuget push SensataUILib.1.0.0.nupkg -k YOUR_PERSONAL_ACCESS_TOKEN -s http
 
 2. The NuGet package should have now been published to your organization's GitHub Packages.
 
-# Automated Publishing of Nuget Packages to GitHub Packages
+## Automated Publishing of Nuget Packages to GitHub Packages
 
-* Make sure a library project has it's own independent git repository.
+#### Follow these steps to automatically publish Nuget packages to GitHub Packages
 
-* Setup .github/workflows/ folder structure on the git repository root level folder.
+1. **Create a Dedicated Repository**: Ensure that your library project has its own independent git repository.
 
-* Good to Read Links about Github packages and automated publishing -
-  * Link 1 -
-  * Link 2 -
+2. **Setup Folder Structure**: Create a `.github/workflows/` folder structure in the root level of the git repository.
 
-* Create a file with format .yml extension in the workflows folder.
+3. **Research**: Try reading up on GitHub packages and automated publishing. Here are some useful links:
+  * [GitHub Actions documentation - GitHub Docs](https://docs.github.com/en/actions)
+  * [Learn GitHub Actions - GitHub Docs](https://docs.github.com/en/actions/learn-github-actions)
+  * [Github Actions tutorial by padok-team](https://github.com/padok-team/github-actions-tutorial)
+  * [GitHub Actions Tutorial: A Complete Guide with Examples - Everhour Blog](https://everhour.com/blog/github-actions-tutorial/)
+  * [GitHub Actions Tutorial and Examples - Codefresh](https://codefresh.io/learn/github-actions/github-actions-tutorial-and-examples/)
+  * [Workflow syntax for GitHub Actions - GitHub Docs](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions)
+  * [Quickstart for GitHub Actions - GitHub Docs](https://docs.github.com/en/actions/quickstart)
+  * [GitHub Actions 101: Creating Your First Workflow - Articles by Victoria Lo](https://lo-victoria.com/github-actions-101-creating-your-first-workflow)
+  * [About workflows - GitHub Docs](https://docs.github.com/en/actions/using-workflows/about-workflows)
 
-* Regarding the .yml file, I gave an example below which is part of all the Mechanization dot net library repositoriess.
+4. **Create a Workflow File**: In the `workflows` folder, create a file with the `.yml` extension. This file will define your GitHub Actions workflow.
+
+5. **Workflow File Example**: Below is an example of a `.yml` file, which is commonly used across all Mechanization .NET library repositories. This script sets up the .NET environment for building, packaging, and publishing of the Nuget package to GitHub packages whenever a branch is merged into the `main` branch.
 
 ```bash
 # This is the name of your workflow
@@ -364,15 +373,15 @@ jobs:
 * The above example script will setup the dot net environment for build, package and publish of the nuget package to github packages on every time a branch is merged into main.
 
 * Source - [Sensata Global Mechanization Nuget Package Source URL](https://nuget.pkg.github.com/Sensata-Global-Mechanization/index.json) is the source for Sensata Global Mechanization packages.
-* secrets.SECRET_NAME - This is to make sure no hard coding of username is done in the script
-* secrets.GH_PACKAGES_TOKEN - This is to make sure no hard coding of password is done in the script
-* The secrets are stored in repository settings like shown in the image below. For now every library repository is setup with secrets corresponding to satya or myself. We created a PAT token with necessary permissions like read:write repositories, read:write packages.
+
+6. **Securing Information**: `secrets.SECRET_NAME` and `secrets.GH_PACKAGES_TOKEN` are used to prevent hardcoding of the username and password in the script, respectively. These secrets are stored in the repository settings, and currently, every library repository is setup with secrets corresponding to Satya or myself. We've created a PAT token with necessary permissions like read:write repositories, read:write packages.
 
     ![Github Secrets](SecretsGithub.png)
 
-* The Action is executed once the branch is requested to merge into main and the corresponding pull request is approved and merge pull request button is cliked.
+7. **Action Execution**: The Action is executed once a branch is requested to merge into `main`, the corresponding pull request is approved, and the "Merge Pull Request" button is clicked.
 
-* The below images show the actions tab in the repository and the corresponding actions executed for the merge pull request.
+8. **Reviewing Actions and Packages**: You can review the actions and packages in the `Actions` and `Packages` tab of the repository, respectively. The images below illustrate this:
+
     ![GitHub Actions Window 1](ActionsGithub.jpeg)
 
     ![GitHub Actions Window 2](ActionsGithub2.jpeg)
@@ -387,9 +396,8 @@ jobs:
 
     ![Alt text](GitHubNugetPackagesDetails.png)
 
-* The current CI scripts are run directly on Github Enterprise Cloud. We can also setup a self hosted runner on a local machine and run the CI scripts on the local machine. This is useful when we want to run the CI scripts on a local machine and publish the packages to a Github nuget packages server.
+9. **Running Locally**: The current CI scripts run directly on Github Enterprise Cloud. We can also set up a self-hosted runner on a local machine and run the CI scripts on the local machine. This is useful when we want to run the CI scripts on a local machine and publish the packages to a Github Nuget packages server.
 
-* We have a limit of 50000 minutes in Sensata Global Mechanization Github Organization per month. At current levels we might not reach the limit. But during first few months we will keep monitoring and we can setup a self hosted runner on a local machine and run the CI scripts on the local machine and publish the packages to a Github nuget packages server.
+10. **Monitoring Usage**: We have a limit of 50000 minutes in Sensata Global Mechanization Github Organization per month. At current levels, we might not reach the limit. But during the first few months, we will keep monitoring and we can set up a self-hosted runner on a local machine and run the CI scripts on the local machine and publish the packages to a Github Nuget packages server if needed.
 
-* CI scripts can also be used to perform unit testings on our repositories. Team members can explore and come up with suggestions as we progress further.
-
+11. **Further Possibilities**: CI scripts can also be used to perform unit testings on our repositories. Team members can explore and come up with suggestions as we progress further.
