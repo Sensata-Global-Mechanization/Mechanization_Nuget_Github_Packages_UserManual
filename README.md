@@ -370,9 +370,9 @@ jobs:
 
 ```
 
-    * The above example script will setup the dot net environment for build, package and publish of the nuget package to github packages on every time a branch is merged into main.
+* The above example script will setup the dot net environment for build, package and publish of the nuget package to github packages on every time a branch is merged into main.
 
-    * Source - [Sensata Global Mechanization Nuget Package Source URL](https://nuget.pkg.github.com/Sensata-Global-Mechanization/index.json) is the source for Sensata Global Mechanization packages.
+* Source - [Sensata Global Mechanization Nuget Package Source URL - https://nuget.pkg.github.com/Sensata-Global-Mechanization/index.json](https://nuget.pkg.github.com/Sensata-Global-Mechanization/index.json) is the source for Sensata Global Mechanization packages.
 
 6. **Securing Information**: `secrets.SECRET_NAME` and `secrets.GH_PACKAGES_TOKEN` are used to prevent hardcoding of the username and password in the script, respectively. These secrets are stored in the repository settings, and currently, every library repository is setup with secrets corresponding to Satya or Anoop. We've created a PAT token with necessary permissions like read:write repositories, read:write packages. (Pending work: This needs to be changed to team/org level instead of individual)
 
