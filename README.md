@@ -282,7 +282,9 @@ dotnet nuget push SensataUILib.1.0.0.nupkg -k YOUR_PERSONAL_ACCESS_TOKEN -s http
 
 4. **Create a Workflow File**: In the `workflows` folder, create a file with the `.yml` extension. This file will define your GitHub Actions workflow.
 
-5. **Workflow File Example**: Below is an example of a `.yml` file, which is commonly used across all Mechanization .NET library repositories. This script sets up the .NET environment for building, packaging, and publishing of the Nuget package to GitHub packages whenever a branch is merged into the `main` branch.
+5. **Workflow File Example**: The following presents an example of a `.yml` file that is commonly employed across all Mechanization .NET library repositories. Please note that the `.yml` file for dotnet framework library projects varies slightly. As a reference, consider viewing the `.yml` file associated with the SensataUILib project, which can be found here: [SensataUILib workflow script](https://github.com/Sensata-Global-Mechanization/Sand-Box-.NET-Modular-UI-Library/blob/main/.github/workflows/build-dotnet-library.yml).
+
+    5.1 **Script Function**: This script configures the .NET environment to build, package, and publish the Nuget package to GitHub packages each time a branch is merged into the `main` branch.
 
 ```bash
 # This is the name of your workflow
