@@ -261,7 +261,7 @@ dotnet nuget push SensataUILib.1.0.0.nupkg -k YOUR_PERSONAL_ACCESS_TOKEN -s http
 
 2. The NuGet package should have now been published to your organization's GitHub Packages.
 
-## Automated Publishing of Nuget Packages to GitHub Packages
+# Automated Publishing of Nuget Packages to GitHub Packages
 
 #### Follow these steps to automatically publish Nuget packages to GitHub Packages
 
