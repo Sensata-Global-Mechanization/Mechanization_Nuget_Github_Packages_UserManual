@@ -1,6 +1,8 @@
 # Table of Contents
 
 - [Retrieving GitHub Packages via Visual Studio Package Manager](#retrieving-github-packages-via-visual-studio-package-manager)
+  - [Initial Tasks for Developers to do before starting to work on the project](#initial-tasks-for-developers-to-do-before-starting-to-work-on-the-project)
+  - [GitHub Packages can be easily retrieved via the Visual Studio Package Manager by adding the appropriate source. Follow the steps below to configure it:](#github-packages-can-be-easily-retrieved-via-the-visual-studio-package-manager-by-adding-the-appropriate-source-follow-the-steps-below-to-configure-it)
 - [How to use and update existing GitHub Repositories](#how-to-use-and-update-existing-github-repositories)
   - [.NET Core Projects](#net-core-projects)
     - [Update Version Numbers](#update-version-numbers)
