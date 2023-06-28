@@ -73,15 +73,15 @@
 
 5. **Close the Settings**: Click `OK` to close the settings window.
 
-6. **Enter GitHub Login Details**: The first time you try to retrieve a package from this source, Visual Studio will prompt you for a `username` and `password`. Enter your `GitHub login email` as the `username` and your `personal access token` as the `password`.
+6. **Open the NuGet Package Manager**: Navigate to `Project > Manage NuGet Packages...`.
 
-7. Now, Visual Studio is set up to retrieve packages from the GitHub Package source you added. You can manage and install these packages via the `NuGet Package Manager`. To find a specific package and its version:
+7. **Change package source**: In the NuGet Package Manager window, ensure that the `Package source` is set to the source you added.
+    
+8. **Enter GitHub Login Details**: The first time you try to retrieve a package from this source, Visual Studio will prompt you for a `username` and `password`. Enter your `GitHub login email` as the `username` and your `personal access token` as the `password`.
 
-8. **Open the NuGet Package Manager**: Navigate to `Project > Manage NuGet Packages...`.
+9. **Search for the Package**: Now, Visual Studio is set up to retrieve packages from the GitHub Package source you added. To find a specific package and its version, enter the name of the package you want in the `Search` field and press Enter. Make sure the package manager is set to the `Browse` tab.
 
-9. **Search for the Package**: In the NuGet Package Manager window, ensure that the `Package source` is set to the source you added. Enter the name of the package you want in the `Search` field and press Enter.
-
-10. **Check the Version**: In the search results, click on the desired package. In the right panel, you will see details about the package, including its version number.
+10. **Check the Version**: In the search results, click on the desired package. In the right panel, you will see details about the package, including its version number. You should always use the most recent version. You can access pre-release versions by checking the `Include prerelease` checkbox next to the search box.
 
 ---
 
