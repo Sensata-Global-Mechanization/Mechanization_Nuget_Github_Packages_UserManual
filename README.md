@@ -42,6 +42,21 @@
 
 # Retrieving GitHub Packages via Visual Studio Package Manager
 
+## Initial Tasks for Developers to do before starting to work on the project
+
+- A GitHub account with access to your organization's repositories.
+- Create a Personal Access Token (PAT) at the organization level with `read:packages` and `write:packages` scopes for Github
+- Go to your GitHub account settings.
+  - Select Developer settings.
+  - Select Personal access tokens.
+  - Click on Generate new token.
+  - Give your token a descriptive name.
+  - Select the read:packages and write:packages scopes for this token to authorize for your specific tasks.
+    - A member of a GitHub organization can use a personal access token with the `read:packages` and `write:packages` scopes to publish packages to GitHub Packages within the organization.
+    - Set the expiration date for your token to a `SEPCIFIC DATE` rather than `never` if you don’t want it to expire to soon enough.
+    - setting the expiration date to `never` ensures that the token does not expire, it is generally recommended to set an expiration date for `security reasons`
+    - Click on Generate token.
+
 ## GitHub Packages can be easily retrieved via the Visual Studio Package Manager by adding the appropriate source. Follow the steps below to configure it:
 
 1. **Open Visual Studio**: Launch your instance of Visual Studio.
@@ -56,13 +71,15 @@
 
 5. **Close the Settings**: Click `OK` to close the settings window.
 
-6. Now, Visual Studio is set up to retrieve packages from the GitHub Package source you added. You can manage and install these packages via the `NuGet Package Manager`. To find a specific package and its version:
+6. **Enter GitHub Login Details**: The first time you try to retrieve a package from this source, Visual Studio will prompt you for a `username` and `password`. Enter your `GitHub login email` as the `username` and your `personal access token` as the `password`.
 
-7. **Open the NuGet Package Manager**: Navigate to `Project > Manage NuGet Packages...`.
+7. Now, Visual Studio is set up to retrieve packages from the GitHub Package source you added. You can manage and install these packages via the `NuGet Package Manager`. To find a specific package and its version:
 
-8. **Search for the Package**: In the NuGet Package Manager window, ensure that the `Package source` is set to the source you added. Enter the name of the package you want in the `Search` field and press Enter.
+8. **Open the NuGet Package Manager**: Navigate to `Project > Manage NuGet Packages...`.
 
-9. **Check the Version**: In the search results, click on the desired package. In the right panel, you will see details about the package, including its version number.
+9. **Search for the Package**: In the NuGet Package Manager window, ensure that the `Package source` is set to the source you added. Enter the name of the package you want in the `Search` field and press Enter.
+
+10. **Check the Version**: In the search results, click on the desired package. In the right panel, you will see details about the package, including its version number.
 
 ---
 
@@ -143,26 +160,9 @@ Remember to always update the README file with information about the most recent
 
 # Automated Publishing of Nuget Packages to GitHub Packages : steps to automatically publish Nuget packages to GitHub Packages
 
-## Initial Tasks for Developers to do before starting to work on the project
-
-- Visual Studio 2022 with .NET Core or .NET Standard support.
-- A GitHub account with access to your organization's repositories.
-- A Personal Access Token (PAT) at organization level with `read:packages` and `write:packages` scopes.
-  - Create a Personal Access Token at the organization level with `read:packages` and `write:packages` scopes for Github
-  - Go to your GitHub account settings.
-  - Select Developer settings.
-  - Select Personal access tokens.
-  - Click on Generate new token.
-  - Give your token a descriptive name.
-  - Select the read:packages and write:packages scopes for this token to authorize for your specific tasks.
-    - A member of a GitHub organization can use a personal access token with the `read:packages` and `write:packages` scopes to publish packages to GitHub Packages within the organization.
-    - Set the expiration date for your token to a `SEPCIFIC DATE` rather than `never` if you don’t want it to expire to soon enough.
-    - setting the expiration date to `never` ensures that the token does not expire, it is generally recommended to set an expiration date for `security reasons`
-    - Click on Generate token.
-
 ## 1. Create a Dedicated Repository
 
-Ensure that your library project has its own independent git repository.
+Ensure that your library project has its own independent git repository and you have Visual Studio 2022 with .NET Core or .NET Standard support.
 
 ## 2. Setup Folder Structure
 
