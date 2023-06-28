@@ -1,5 +1,13 @@
 # Table of Contents
 
+- [Retrieving GitHub Packages via Visual Studio Package Manager](#retrieving-github-packages-via-visual-studio-package-manager)
+- [How to use and update existing GitHub Repositories](#how-to-use-and-update-existing-github-repositories)
+  - [.NET Core Projects](#net-core-projects)
+    - [Update Version Numbers](#update-version-numbers)
+    - [Update Readme](#update-readme)
+    - [NuGet Pre-release](#nuget-pre-release)
+    - [Git Releases](#git-releases)
+  - [.NET Framework Projects - package meta data Update](#net-framework-projects---package-meta-data-update)
 - [Automated Publishing of Nuget Packages to GitHub Packages : steps to automatically publish Nuget packages to GitHub Packages](#automated-publishing-of-nuget-packages-to-github-packages--steps-to-automatically-publish-nuget-packages-to-github-packages)
   - [Initial Tasks for Developers to do before starting to work on the project](#initial-tasks-for-developers-to-do-before-starting-to-work-on-the-project)
   - [1. Create a Dedicated Repository](#1-create-a-dedicated-repository)
@@ -31,6 +39,107 @@
   - [Edit the .nuspec file](#edit-the-nuspec-file)
   - [Package the NuGet package](#package-the-nuget-package)
   - [Publish the NuGet package to GitHub Packages](#publish-the-nuget-package-to-github-packages)
+
+# Retrieving GitHub Packages via Visual Studio Package Manager
+
+## GitHub Packages can be easily retrieved via the Visual Studio Package Manager by adding the appropriate source. Follow the steps below to configure it:
+
+1. **Open Visual Studio**: Launch your instance of Visual Studio.
+
+2. **Access the Package Manager Settings**: Navigate to `Tools > NuGet Package Manager > Package Manager Settings`.
+
+3. **Add a Package Source**: In the settings window, select `Package Sources` from the left panel. Click on the green `+` button to add a new package source.
+
+4. **Configure the Package Source**: In the right panel, set the `Name` field as something recognizable (e.g., "GitHub Packages"). In the `Source` field, enter the URL of the GitHub Package source.
+    - Source URL : `https://nuget.pkg.github.com/Sensata-Global-Mechanization/index.json`.
+    - Click `Update` to save your changes.
+
+5. **Close the Settings**: Click `OK` to close the settings window.
+
+6. Now, Visual Studio is set up to retrieve packages from the GitHub Package source you added. You can manage and install these packages via the `NuGet Package Manager`. To find a specific package and its version:
+
+7. **Open the NuGet Package Manager**: Navigate to `Project > Manage NuGet Packages...`.
+
+8. **Search for the Package**: In the NuGet Package Manager window, ensure that the `Package source` is set to the source you added. Enter the name of the package you want in the `Search` field and press Enter.
+
+9. **Check the Version**: In the search results, click on the desired package. In the right panel, you will see details about the package, including its version number.
+
+---
+
+# How to use and update existing GitHub Repositories
+
+Tasks that developers often need to perform as they modify code for version updates like major, minor, or patch. These tasks include updating version numbers, modifying the readme file, creating pre-releases, and git releases.
+
+## .NET Core Projects
+
+For .NET Core projects, you can modify the version number either through the project properties package settings or directly in the .csproj file.
+
+### Update Version Numbers
+
+1. **Via Project Properties**: Right-click on the project in the Solution Explorer and select `Properties`. Navigate to the `Package` tab. Here, you can update the `Package version` field to the new version number.
+
+2. **Directly in the .csproj file**: Open your .csproj file in a text editor. Locate the `<Version>` tag and update the version number.
+
+### Update Readme
+
+Open the README.md file in a text editor and make necessary changes. Save and commit the changes. Information to include in the README file is a change log or update log that details what has changed in the most recent version of the package.
+
+Here are some guidelines on what to include:
+
+- **Feature updates**: Describe any new features or enhancements to existing features. This helps users understand what new capabilities they can expect from the update.
+
+- **Bug fixes**: List any bugs that have been fixed. This informs users that issues they may have been experiencing should now be resolved.
+
+- **Breaking changes**: If the update introduces any changes that disrupt the existing behavior of the package, these should be clearly stated. This helps users anticipate any necessary changes to their own code when they update the package.
+
+- Below is an example of how you to structure update log in the README file:
+
+```markdown
+## Changelog
+
+### Version 1.0.1
+
+**Feature updates:**
+- Added support for XYZ
+
+**Bug fixes:**
+- Fixed issue where ABC wouldn't work properly under certain conditions
+
+**Breaking changes:**
+- The `exampleMethod()` now requires an additional argument
+```
+
+### NuGet Pre-release
+
+- NuGet uses a specific versioning scheme to determine which package version is considered the "latest stable release" and which are considered "pre-release" or "beta".
+
+- A pre-release package is indicated by appending a hyphen and a series of dot separated identifiers immediately following the patch version. Identifiers are composed of only alphanumeric characters and hyphens (no leading or trailing hyphens). Examples of pre-release versions include `1.0.0-alpha`, `1.0.0-alpha.1`, `1.0.0-0.3.7`, `1.0.0-x.7.z.92`.
+
+- When determining the "latest stable release", NuGet considers all versions without a pre-release identifier (such as `-alpha`, `-beta`, etc.) and selects the one with the highest version number as the latest stable release. For instance, if the versions `1.0.0`, `1.0.1-beta`, `1.0.2-beta`, and `1.0.3` are present, NuGet will consider `1.0.3` as the latest stable release because it's the highest version without a pre-release identifier.
+
+### Git Releases
+
+After the merge into the `main` branch has been approved and merged, it's time to create a new git release. Here are the steps:
+
+1. Navigate to the GitHub page of your repository.
+2. Click on `Releases`, then `Draft a new release`.
+3. Enter the version number in the `Tag version` field. This version number should match the NuGet package version number for consistency.
+4. Select the `main` branch in the `Target` field.
+5. Enter a title and description for the release. In the description, consider using the `Generate release notes` feature, which can automatically generate notes based on the commit messages and pull requests. If this doesn't cover all changes, make sure to manually add what changed in the most recent version.
+6. If this is a pre-release, check the `This is a pre-release` box. Remember, NuGet considers a version as a latest stable release if it doesn't have a pre-release suffix like `-beta`. If the `This is a pre-release` box is checked, the package version will be considered a pre-release or beta release.
+7. Click `Publish release`.
+
+Remember to always update the README file with information about the most recent changes. This will provide other developers with a clear understanding of what has been updated, fixed, or added.
+
+## .NET Framework Projects - package meta data Update
+
+- In the context of .NET Framework projects, a `.nuspec` file is used to manage the metadata for a NuGet package. It is an XML manifest that contains package metadata used by NuGet when creating a package and when publishing it to a feed. This file includes information like the package identifier, version, author, and dependencies. When updating a .NET Framework project, you may need to manually modify this `.nuspec` file to update the version number or other package details.
+
+- For .NET Framework projects, Other than the .nuspec file all remaining steps are same as DotNetCore projects.
+
+- Open the .nuspec file in a text editor. Locate the `<version>` tag and update the version number.
+
+---
 
 # Automated Publishing of Nuget Packages to GitHub Packages : steps to automatically publish Nuget packages to GitHub Packages
 
