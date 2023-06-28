@@ -38,7 +38,8 @@
 
 - Visual Studio 2022 with .NET Core or .NET Standard support.
 - A GitHub account with access to your organization's repositories.
-- A Personal Access Token (PAT) at organization level with `read:packages` and `write:packages` scopes. Create a Personal Access Token at the organization level with read:packages and write:packages scopes for Github
+- A Personal Access Token (PAT) at organization level with `read:packages` and `write:packages` scopes.
+  - Create a Personal Access Token at the organization level with `read:packages` and `write:packages` scopes for Github
   - Go to your GitHub account settings.
   - Select Developer settings.
   - Select Personal access tokens.
