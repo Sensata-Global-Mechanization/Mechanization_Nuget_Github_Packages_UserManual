@@ -605,13 +605,13 @@ nuget spec
 cd "path\to\your\project\folder"
 ```
 
-2. Run the following command to create the NuGet package based on the `.nuspec` file:
+2. To create a NuGet package that includes all the referenced project dependencies, run the command:
 
 ```bash
-nuget pack YourPackageName.nuspec
+nuget pack -Prop Configuration=Release -IncludeReferencedProjects
 ```
 
-- Replace `YourPackageName.nuspec` with the name of your `.nuspec` file. This command creates a `.nupkg` file in the project folder.
+- This command creates `.nupkg` file in the project folder.
 
 ### Publish the NuGet package to GitHub Packages
 
